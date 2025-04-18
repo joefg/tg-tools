@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+function getUpdates(){
+	local TOKEN="$TG_TOKEN"
+	local URL="https://api.telegram.org/bot$TOKEN/getUpdates"
+	curl -s -X POST $URL
+}
+
+getUpdates "$1"
