@@ -9,7 +9,7 @@ function send(){
 	curl -s -X POST $url \
 		-F chat_id=$id \
 		-F caption="$caption_string" \
-		-F document=@$document_location
+		-F document=@"$document_location"
 }
 
 function usage(){
