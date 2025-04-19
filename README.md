@@ -20,7 +20,7 @@ This script returns your bot's basic information, and is useful for testing
 API keys. Doesn't require anything other than the token.
 
 ```bash
-$ TG_TOKEN="<your-token-here"> ./tg-get-me
+$ TG_TOKEN="<your-token-here>" ./tg-get-me
 ```
 
 ### tg-updates
