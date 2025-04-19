@@ -14,6 +14,15 @@ Before each of these, make sure you have a Telegram Bot set up through
 [BotFather](https://t.me/BotFather). You will want the API token. Keep this
 token secure. Before each command, define the token.
 
+### tg-get-me
+
+This script returns your bot's basic information, and is useful for testing
+API keys. Doesn't require anything other than the token.
+
+```bash
+$ TG_TOKEN="<your-token-here"> ./tg-get-me
+```
+
 ### tg-updates
 
 This script returns the [updates available to the
