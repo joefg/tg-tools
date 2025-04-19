@@ -6,4 +6,4 @@ function getUpdates(){
 	curl -s -X POST $URL
 }
 
-getUpdates "$1"
+getUpdates

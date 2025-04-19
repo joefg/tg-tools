@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+function notify(){
+	local MSG_STRING="$1"
+	local TOKEN="$TG_TOKEN"
+	local ID="$TG_CHAT_ID"
+	local URL="https://api.telegram.org/bot$TOKEN/sendMessage"
+	curl -s -X POST $URL -d chat_id=$ID -d text="$MSG_STRING"
+}
+
+notify "$1"
