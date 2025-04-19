@@ -104,3 +104,19 @@ Once you have those, run like this:
 ```bash
 $ TG_TOKEN="<your-token-here>" ./tg-send-document "<chat-id>" "Caption" path/to/document.pdf
 ```
+
+## Advanced usage
+
+### Adding tg-tools to a Docker image
+
+You could do this by adding this repository as a [git
+submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules), pinning it to a
+specific commit or tag. Once you have this, inside your Dockerfile, you can
+install `tg-tools` by adding a `cd tg-gools; make install` step in your
+Dockerfile, which should enable the use of any script in this repository
+anywhere in your container.
+
+### Using tg-tools as a CI alerting system
+
+Add your `TG_TOKEN` to your CI runner's environment system, then as part of the
+CI job, run `tg-message` with a summary of the CI job to a channel or a group.
