@@ -45,8 +45,7 @@ to your bot and using its API key. running `tg-updates`, and looking inside the
 message). Once you have this, run like this:
 
 ```bash
-$ TG_TOKEN="<your-token-here>" TG_CHAT_ID="<your-chat-id>" ./tg-send "Hello
-World"
+$ TG_TOKEN="<your-token-here>" ./tg-send "<chat-id>" "Hello World"
 ```
 
 ### tg-send-photo

@@ -1,11 +1,27 @@
 #!/usr/bin/env sh
 
 function notify(){
-	local MSG_STRING="$1"
-	local TOKEN="$TG_TOKEN"
-	local ID="$TG_CHAT_ID"
-	local URL="https://api.telegram.org/bot$TOKEN/sendMessage"
-	curl -s -X POST $URL -d chat_id=$ID -d text="$MSG_STRING"
+	local id="$1"
+	local msg_string="$2"
+	local token="$TG_TOKEN"
+	local url="https://api.telegram.org/bot$token/sendMessage"
+	curl -s -X POST $url -d chat_id=$id -d text="$msg_string"
 }
 
-notify "$1"
+function usage(){
+	echo "Usage: $0 <chat-id> <message>"
+}
+
+function main(){
+	local chat_id="$1"
+	local message="$2"
+
+	if [[ -z $chat_id || -z $message ]]; then
+		usage
+		exit 1
+	fi
+
+	notify "$chat_id" "$message"
+}
+
+main "$@"
