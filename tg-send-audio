@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+function send(){
+	local id="$1"
+	local caption_string="$2"
+	local audio_location="$3"
+	local token="$TG_TOKEN"
+	local url="https://api.telegram.org/bot$token/sendAudio"
+	curl -s -X POST $url \
+		-F chat_id=$id \
+		-F caption="$caption_string" \
+		-F audio=@$audio_location
+}
+
+function usage(){
+	echo "Usage: $0 <chat-id> <caption> <path-to-audio>"
+}
+
+function main(){
+	local chat_id="$1"
+	local caption="$2"
+	local audio="$3"
+
+	if [[ -z $chat_id || -z $caption || -z $audio ]]; then
+		usage
+		exit 1
+	fi
+
+	send "$chat_id" "$caption" "$audio"
+}
+
+main "$@"
