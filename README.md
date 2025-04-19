@@ -58,3 +58,14 @@ Once you have those, run like this:
 ```bash
 $ TG_TOKEN="<your-token-here>" ./tg-send-photo "<chat-id>" "Caption" path/to/image.jpeg
 ```
+
+### tg-send-document
+
+This script can send documents with a caption.
+
+As above, you will need a `TG_TOKEN` and a chat ID.
+Once you have those, run like this:
+
+```bash
+$ TG_TOKEN="<your-token-here>" ./tg-send-document "<chat-id>" "Caption" path/to/document.pdf
+```
