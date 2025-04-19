@@ -26,7 +26,7 @@ $ TG_TOKEN="<your-token-here>" ./tg-updates
 
 This returns a plain JSON string, which can be manipulated with `jq`.
 
-### tg-notify
+### tg-send
 
 This script is a simple notifier that can send arbitrary text to a chat between
 a user and a bot using the `/sendMessage` API.
@@ -36,6 +36,6 @@ to your bot and using its API key. running `tg-updates`, and looking inside the
 message). Once you have this, run like this:
 
 ```bash
-$ TG_TOKEN="<your-token-here>" TG_CHAT_ID="<your-chat-id>" ./tg-notify "Hello
+$ TG_TOKEN="<your-token-here>" TG_CHAT_ID="<your-chat-id>" ./tg-send "Hello
 World"
 ```
