@@ -8,6 +8,19 @@ their [web API](https://core.telegram.org/bots).
 * `sh`
 * [curl](https://curl.se/docs/manpage.html)
 
+## Installation
+
+These are intended to be small and simple enough to just copy/paste into
+wherever required, so there's no complicated install step.
+
+However, if you want to install them to a machine (or add them to a container),
+you can use the provided `Makefile` to `make install`, which copies them to
+your `~/.local/bin/` folder.
+
+For development purposes, there is a `make link` command, which symlinks these
+scripts to your `~/.local/bin/` folder. This isn't to be recommended for
+container use.
+
 ## Usage
 
 Before each of these, make sure you have a Telegram Bot set up through
