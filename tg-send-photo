@@ -1,15 +1,32 @@
 #!/usr/bin/env sh
 
 function send(){
-	local CAPTION_STRING="$1"
-	local IMAGE_LOCATION="$2"
-	local TOKEN="$TG_TOKEN"
-	local ID="$TG_CHAT_ID"
-	local URL="https://api.telegram.org/bot$TOKEN/sendPhoto"
-	curl -s -X POST $URL \
-		-F chat_id=$ID \
-		-F caption="$CAPTION_STRING" \
-		-F photo=@$IMAGE_LOCATION
+	local id="$1"
+	local caption_string="$2"
+	local image_location="$3"
+	local token="$TG_TOKEN"
+	local url="https://api.telegram.org/bot$token/sendPhoto"
+	curl -s -X POST $url \
+		-F chat_id=$id \
+		-F caption="$caption_string" \
+		-F photo=@$image_location
 }
 
-send "$1" "$2"
+function usage(){
+	echo "Usage: $0 <chat-id> <caption> <path-to-image>"
+}
+
+function main(){
+	local chat_id="$1"
+	local caption="$2"
+	local image="$3"
+
+	if [[ -z $chat_id || -z $caption || -z $image ]]; then
+		usage
+		exit 1
+	fi
+
+	send "$chat_id" "$caption" "$image"
+}
+
+main "$@"

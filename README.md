@@ -52,10 +52,9 @@ $ TG_TOKEN="<your-token-here>" ./tg-send "<chat-id>" "Hello World"
 
 This script can send images with a caption.
 
-As above, you will need a `TG_TOKEN` and a `TG_CHAT_ID`.
+As above, you will need a `TG_TOKEN` and a chat ID.
 Once you have those, run like this:
 
 ```bash
-$ TG_TOKEN="<your-token-here>" TG_CHAT_ID="<your-chat-id>" ./tg-send-photo "Caption"
-path/to/image.jpeg
+$ TG_TOKEN="<your-token-here>" ./tg-send-photo "<chat-id>" "Caption" path/to/image.jpeg
 ```
