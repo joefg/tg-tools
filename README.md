@@ -70,6 +70,17 @@ Once you have those, run like this:
 $ TG_TOKEN="<your-token-here>" ./tg-send-audio "<chat-id>" "Caption" path/to/audio.mp3
 ```
 
+### tg-send-video
+
+This script can send video files with a caption.
+
+As above, you will need a `TG_TOKEN` and a chat ID.
+Once you have those, run like this:
+
+```bash
+$ TG_TOKEN="<your-token-here>" ./tg-send-video "<chat-id>" "Caption" path/to/video.mp4
+```
+
 ### tg-send-document
 
 This script can send documents with a caption.
