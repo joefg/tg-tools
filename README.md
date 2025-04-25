@@ -1,6 +1,6 @@
 # tg-tools
 
-bash helpers for simple [Telegram](https://telegram.org) bots, interfacing with
+Shell helpers for simple [Telegram](https://telegram.org) bots, interfacing with
 their [web API](https://core.telegram.org/bots).
 
 ## Requirements
@@ -112,7 +112,7 @@ $ TG_TOKEN="<your-token-here>" ./tg-send-document "<chat-id>" "Caption" path/to/
 You could do this by adding this repository as a [git
 submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules), pinning it to a
 specific commit or tag. Once you have this, inside your Dockerfile, you can
-install `tg-tools` by adding a `cd tg-gools; make install` step in your
+install `tg-tools` by adding a `cd tg-tools; make install` step in your
 Dockerfile, which should enable the use of any script in this repository
 anywhere in your container.
 
